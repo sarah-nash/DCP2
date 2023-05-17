@@ -1,0 +1,193 @@
+fbpac_Propub_mssgtrends2 output:
+(Jan 2018 to Dec 2019)
+Missing Periods reflect no data for that time 
+
+Word frequencies for period: 2018-1 to 2018-3                                   
++---------+-----+                                                               
+|word     |count|
++---------+-----+
+|trump    |2356 |
+|congress |1632 |
+|gun      |1562 |
+|paul     |1189 |
+|ryan     |1089 |
+|petition |1070 |
+|president|1009 |
+|health   |807  |
+|lives    |804  |
+|change   |774  |
+|national |717  |
+|violence |701  |
+|school   |674  |
+|work     |622  |
+|rights   |610  |
++---------+-----+
+
+Word frequencies for period: 2018-4 to 2018-6
++---------+-----+                                                               
+|word     |count|
++---------+-----+
+|trump    |2407 |
+|congress |1676 |
+|petition |1189 |
+|president|977  |
+|health   |976  |
+|money    |972  |
+|children |835  |
+|national |800  |
+|work     |798  |
+|rights   |791  |
+|senate   |774  |
+|justice  |761  |
+|change   |717  |
+|attorney |716  |
+|chip     |698  |
++---------+-----+
+
+Word frequencies for period: 2018-7 to 2018-9
++----------+-----+                                                              
+|word      |count|
++----------+-----+
+|trump     |3747 |
+|court     |2328 |
+|president |2080 |
+|supreme   |2078 |
+|congress  |1961 |
+|republican|1862 |
+|money     |1833 |
+|chip      |1771 |
+|rights    |1693 |
+|work      |1688 |
+|america   |1571 |
+|kavanaugh |1554 |
+|health    |1527 |
+|senate    |1473 |
+|party     |1461 |
++----------+-----+
+
+Word frequencies for period: 2018-10 to 2018-12
++----------+-----+                                                              
+|word      |count|
++----------+-----+
+|trump     |4888 |
+|senate    |3190 |
+|president |2968 |
+|work      |2906 |
+|congress  |2876 |
+|health    |2682 |
+|republican|2641 |
+|world     |2631 |
+|great     |2625 |
+|america   |2544 |
+|rights    |2170 |
+|democrats |2122 |
+|voters    |2103 |
+|change    |1940 |
+|community |1914 |
++----------+-----+
+
+Word frequencies for period: 2019-1 to 2019-3
++----------+-----+                                                              
+|word      |count|
++----------+-----+
+|trump     |1337 |
+|president |991  |
+|grassroots|988  |
+|congress  |844  |
+|critical  |742  |
+|change    |723  |
+|corporate |703  |
+|money     |687  |
+|donors    |685  |
+|power     |665  |
+|petition  |639  |
+|children  |631  |
+|donations |626  |
+|health    |610  |
+|medical   |597  |
++----------+-----+
+
+Word frequencies for period: 2019-4 to 2019-6
++----------+-----+                                                              
+|word      |count|
++----------+-----+
+|chip      |3484 |
+|donors    |3410 |
+|abortion  |3169 |
+|trump     |2664 |
+|mothers   |2615 |
+|democratic|2549 |
+|grassroots|2454 |
+|change    |2214 |
+|climate   |2206 |
+|president |2040 |
+|congress  |2001 |
+|emergency |1989 |
+|health    |1875 |
+|donor     |1720 |
+|children  |1687 |
++----------+-----+
+
+Word frequencies for period: 2019-7 to 2019-9
+No data for this period                                                         
+Word frequencies for period: 2019-10 to 2019-12
+No data for this period        
+
+fbmonolith_adobs_adtexttrends2 output:
+(Jan 2020 to Dec 2021)
+Missing Periods reflect no data for that time 
+
+Word frequencies for period: 2020-1 to 2020-3
+No data for this period                                                         
+Word frequencies for period: 2020-4 to 2020-6
+No data for this period
+Word frequencies for period: 2020-7 to 2020-9
+No data for this period
+Word frequencies for period: 2020-10 to 2020-12
++---------+-----+                                                               
+|word     |count|
++---------+-----+
+|covid    |1098 |
+|health   |643  |
+|world    |392  |
+|lives    |385  |
+|safe     |371  |
+|change   |326  |
+|pandemic |278  |
+|crisis   |272  |
+|children |264  |
+|women    |260  |
+|emergency|247  |
+|spread   |236  |
+|mask     |230  |
+|public   |230  |
+|water    |215  |
++---------+-----+
+
+Word frequencies for period: 2021-1 to 2021-3
++---------+-----+                                                               
+|word     |count|
++---------+-----+
+|covid    |5636 |
+|health   |3019 |
+|black    |2024 |
+|change   |1755 |
+|vaccine  |1691 |
+|world    |1685 |
+|safe     |1652 |
+|pandemic |1471 |
+|public   |1461 |
+|lives    |1353 |
+|climate  |1328 |
+|children |1211 |
+|education|1111 |
+|video    |1076 |
+|school   |1070 |
++---------+-----+
+
+Word frequencies for period: 2021-4 to 2021-6
+No data for this period
+Word frequencies for period: 2021-7 to 2021-9
+No data for this period
+Word frequencies for period: 2021-10 to 2021-12
+No data for this period
