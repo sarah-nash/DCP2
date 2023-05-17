@@ -1,0 +1,104 @@
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+library(tidyverse)
+library(tidytext)
+library(tm)
+library(forcats)
+
+View(monolith_time[1:500,]) 
+
+################# Initialization ####################
+df_monolith <- read.csv("fb_monolith_with_targets.csv")
+df_pb <- read.csv("pro_pub_targets_entire.csv")
+df_monolith$observed_at <- as.Date(df_monolith$observed_at)
+df_pb$created_at <- as.Date(df_pb$created_at)
+
+################ Data with Timestamps ############
+#--------------- Monolith -------------
+monolith_time <- df_monolith %>% 
+  mutate(year_month_day = lubridate::floor_date(observed_at, "day"),
+         year = format(observed_at, "%Y"),
+         month = format(observed_at, "%m"),
+         day = format(observed_at, "%d"))
+
+#--------------- Propublica -----------------
+pb_time <- df_pb %>% 
+  mutate(year_month_day = lubridate::floor_date(created_at, "day"),
+         year = format(created_at, "%Y"),
+         month = format(created_at, "%m"),
+         day = format(created_at, "%d"))
+
+############## Groupings #################
+#------------ Monolith Years ---------------
+mono2020 <- monolith_time %>%
+  filter(year == 2020)
+
+mono2021 <- monolith_time %>%
+  filter(year == 2021)
+
+mono2022 <- monolith_time %>%
+  filter(year == 2022)
+
+#----------- Propublica Years ------------
+pb2017 <- pb_time %>%
+  filter(year == 2017)
+
+pb2018 <- pb_time %>%
+  filter(year == 2018)
+
+pb2019 <- pb_time %>%
+  filter(year == 2019)
+
+#----------- Monolith political value averages ------------
+mono_average_daily_political_value <- monolith_time %>%
+  group_by(year_month_day) %>%
+  summarise(average_political = mean(political_value))
+
+mono20_average_daily_political_value <- mono2020 %>%
+  group_by(year_month_day) %>%
+  summarise(average_political = mean(political_value))
+
+mono21_average_daily_political_value <- mono2021 %>%
+  group_by(year_month_day) %>%
+  summarise(average_political = mean(political_value))
+
+mono22_average_daily_political_value <- mono2022 %>%
+  group_by(year_month_day) %>%
+  summarise(average_political = mean(political_value))
+
+#------------ Propublica political value --------
+############ Targets ######################
+#--------------- Monolith Age Groups -------------
+target_age <- data.frame(str_split(monolith_time$target_age, "-"))
+
+age <- data.frame(t(target_age))
+  
+mono_age <- monolith_time %>%
+  mutate(min_age = age$X1,
+         max_age = age$X2)
+
+mono_age_groups <- mono_age %>%
+  summarize("<18" = sum(min_age < 18),
+            "18-24" = sum(min_age < 24 & max_age > 18),
+            "25-34" = sum(min_age < 34 & max_age > 25),
+            "35-44" = sum(min_age < 44 & max_age > 35),
+            "45-54" = sum(min_age < 54 & max_age > 45),
+            "55-64" = sum(min_age < 64 & max_age > 55),
+            "65+" = sum(max_age > 64))
+
+
+mono_age_groups <- data.frame(t(mono_age_groups))
+
+#--------------- Propublica Age Groups -------------
+# Age groups
+pb_age_groups <- pb_time %>%
+  summarize("<18" = sum(target_minage < 18, na.rm=TRUE),
+            "18-24" = sum(target_minage < 24 & target_maxage > 18, na.rm=TRUE),
+            "25-34" = sum(target_minage < 34 & target_maxage > 25, na.rm=TRUE),
+            "35-44" = sum(target_minage < 44 & target_maxage > 35, na.rm=TRUE),
+            "45-54" = sum(target_minage < 54 & target_maxage > 45, na.rm=TRUE),
+            "55-64" = sum(target_minage < 64 & target_maxage > 55, na.rm=TRUE),
+            "65+" = sum(target_maxage > 64, na.rm=TRUE))
+
+pb_age_groups <- data.frame(t(pb_age_groups))
