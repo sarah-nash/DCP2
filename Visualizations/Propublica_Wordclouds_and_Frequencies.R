@@ -12,19 +12,23 @@ library(stringr)
 #         ****   You can call any of these by highlighting one, then Shift + Enter   ****
 
 # pb_wdcloud #
-# This is a pure wordcloud (all words). 
+# This is a pure wordcloud (all words).
 # You can choose the year you want by adding the year suffix to the object: 17, 18, or 19
 
 
 # pb_top20_filtered_wdcloud #
 # This is the top 20 wordcloud.
-# You can change the number of words you want to see by changing the following code and reloading the wordcloud::
-# pb_top20_filtered <- head(pb_freq_df_filtered, 20) #<- 20 is the default number of words
+# You can change the number of words you want to see by changing the following code:
+#           pb_top20_filtered <- head(pb_freq_df_filtered, 20) #<- 20 is the default number of words
+#  and reloading the wordcloud:
+#           pb_top20_filtered_wdcloud <- wordcloud2(pb_top20_filtered)
 
 # There are yearly variations for these top20 clouds too: # pb_wdcloud17 #
-# You can change the number of words you want to see by changing the following code and reloading the wordcloud::
-# top20_17 <- head(freq_df17, 20) #<- 20 is the default number of words
-# You can choose the year you want by adding the year suffix to the object: 17, 18, or 19
+# You can change the number of words you want to see by changing the following code:
+#           top20_17 <- head(freq_df17, 20) #<- 20 is the default number of words
+# and reloading the wordcloud:
+#           pb_wdcloud17 <- wordcloud2(top20_17)
+# You can choose the year you want by adding the year suffix to the objects: 17, 18, or 19
 
 # There are monthly variations for these clouds as well. Scroll to the very bottom of the file to view and
 # edit them.
@@ -37,13 +41,6 @@ library(stringr)
 #          top20_monthly_hist        #
 
 ##########################################################################################
-
-
-
-#### all word clouds over time/in different times #####
-pb_ungrouped <- pb_time %>%
-  ungroup()
-
 
 
 ######################## Ad Text Word Cloud ##########################
@@ -83,11 +80,11 @@ pb_freq_df_filtered <-
     word != "br",
     word != "_5mfr",
     word != "bit.ly",
-    word != "http",
-    !str_detect(word, "_5")
+    word != "http",!str_detect(word, "_5")
   )
 
-pb_top20_filtered <- head(pb_freq_df_filtered, 20)# <<<<<<--- Use this code to change number of words in cloud
+pb_top20_filtered <-
+  head(pb_freq_df_filtered, 20)# <<<<<<--- Use this code to change number of words in cloud
 
 pb_top20_hist_filtered <-
   ggplot(pb_top20_filtered, aes(
@@ -129,8 +126,7 @@ freq_df17 <- new_df %>%
     word != "br",
     word != "_5mfr",
     word != "bit.ly",
-    word != "http",
-    !str_detect(word, "_")
+    word != "http",!str_detect(word, "_")
   ) %>%
   count(word) %>%
   arrange(desc(n))
@@ -178,8 +174,7 @@ freq_df18 <- new_df %>%
     word != "br",
     word != "_5mfr",
     word != "bit.ly",
-    word != "http",
-    !str_detect(word, "_")
+    word != "http",!str_detect(word, "_")
   ) %>%
   count(word) %>%
   arrange(desc(n))
@@ -227,8 +222,7 @@ freq_df19 <- new_df %>%
     word != "br",
     word != "_5mfr",
     word != "bit.ly",
-    word != "http",
-    !str_detect(word, "_")
+    word != "http",!str_detect(word, "_")
   ) %>%
   count(word) %>%
   arrange(desc(n))
@@ -276,8 +270,7 @@ freq_df_monthly <- new_df %>%
     word != "br",
     word != "_5mfr",
     word != "bit.ly",
-    word != "http",
-    !str_detect(word, "_5")
+    word != "http",!str_detect(word, "_5")
   ) %>%
   count(word) %>%
   arrange(desc(month), desc(n))
