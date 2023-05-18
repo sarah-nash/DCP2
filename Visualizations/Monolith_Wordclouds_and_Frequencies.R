@@ -18,12 +18,16 @@ library(forcats)
 
 # mono_top20_wdcloud_filtered #
 # This is the top 20 wordcloud.
-# You can change the number of words you want to see by changing the following code and reloading the wordcloud::
-# mono_top20_filtered <- head(mono_freq_df_filtered, 20) #<- 20 is the default number of words
+# You can change the number of words you want to see by changing the following code:
+#         mono_top20_filtered <- head(mono_freq_df_filtered, 20) #<- 20 is the default number of words
+#  and reloading the wordcloud:
+#         mono_top20_wdcloud_filtered <- wordcloud2(mono_top20_filtered)
 
 # There are yearly variations for these top20 clouds too: # top20_wdcloud20 #
-# You can change the number of words you want to see by changing the following code and reloading the wordcloud::
-# top20_df20 <- head(freq_df20, 20)) #<- 20 is the default number of words
+# You can change the number of words you want to see by changing the following code:
+#         top20_df20 <- head(freq_df20, 20) #<- 20 is the default number of words
+#  and reloading the wordcloud:
+#         top20_wdcloud20 <- wordcloud2(top20_df20)
 # You can choose the year you want by adding the year suffix to the objects (instead of 20): 20, 21, or 22
 
 # There are monthly variations for these clouds as well. Scroll to the very bottom of the file to view and
