@@ -9,7 +9,7 @@ library(tm)
 library(forcats)
 
 ##########################  Recommended Objects in this File #############################
-#         ****   You can call any of these by highlighting one, then Shift + Enter   ****
+#         ****   You can call any of these by highlighting one here, then Shift + Enter   ****
 
 # mono_ads_per_month_year and pb_ads_per_month_year - Monthly ad counts with year indicators
 # mono_ads_per_day_histo and pb_ads_per_day_histo - Daily Ad Counts
