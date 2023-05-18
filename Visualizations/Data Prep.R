@@ -35,6 +35,9 @@ monolith_time$Month <- factor(monolith_time$Month, levels = month.abb)
 
 monolith_time$page_name[monolith_time$page_name == "Doctors Without Borders/Médecins Sans Frontières (MSF)"] <-
   "Doctors Without Borders/Medecins Sans Frontieres (MSF)"
+
+monolith_time$page_name[monolith_time$page_name == "Doctors Without Borders/Medecins Sans Frontieres (MSF)"] <-
+  "Doctors Without Borders"
 #--------------- Propublica -----------------
 pb_time <- df_pb %>%
   mutate(
@@ -45,7 +48,16 @@ pb_time <- df_pb %>%
     day = format(created_at, "%d")
   )
 
+pb_time$title[pb_time$title == "Doctors Without Borders/ Médecins Sans Frontières (MSF)"] <-
+  "Doctors Without Borders"
+
+pb_time$title[pb_time$title == "AAAS - The American Association for the Advancement of Science"] <-
+  "AAAS"
+
 pb_time$Month <- factor(pb_time$Month, levels = month.abb)
+
+pb_ungrouped <- pb_time %>%
+  ungroup()
 ############## Groupings #################
 #------------ Monolith Years ---------------
 mono2020 <- monolith_time %>%
