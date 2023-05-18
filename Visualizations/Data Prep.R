@@ -6,7 +6,13 @@ library(tidytext)
 library(tm)
 library(forcats)
 
-View(pb_time[1:500,])
+##############################  **Run This File First** ##################################
+
+# This file contains all objects and data frame dependencies for other vizualization files
+
+##############################  **Run This File First** ##################################
+
+
 
 ################# Initialization ####################
 df_monolith <- read.csv("fb_monolith_with_targets.csv")
