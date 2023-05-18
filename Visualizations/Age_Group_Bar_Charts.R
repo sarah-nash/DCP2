@@ -9,7 +9,7 @@ library(tm)
 library(forcats)
 
 ##########################  Recommended Objects in this File #############################
-#         ****   You can call any of these by highlighting one, then Shift + Enter   ****
+#         ****   You can call any of these by highlighting one here, then Shift + Enter   ****
 
 # mono_age_barplot  and  pb_age_barplot - Age distributions
 # mono_age_props_barplot  and  pb_age_props_barplot - Age proportions
