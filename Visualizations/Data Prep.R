@@ -21,9 +21,11 @@ monolith_time <- df_monolith %>%
     year_month_day = lubridate::floor_date(observed_at, "day"),
     year = format(observed_at, "%Y"),
     month = format(observed_at, "%m"),
+    Month = format(observed_at, "%b"),
     day = format(observed_at, "%d")
   )
 
+monolith_time$Month <- factor(monolith_time$Month, levels = month.abb)
 
 monolith_time$page_name[monolith_time$page_name == "Doctors Without Borders/Médecins Sans Frontières (MSF)"] <-
   "Doctors Without Borders/Medecins Sans Frontieres (MSF)"
@@ -33,9 +35,11 @@ pb_time <- df_pb %>%
     year_month_day = lubridate::floor_date(created_at, "day"),
     year = format(created_at, "%Y"),
     month = format(created_at, "%m"),
+    Month = format(created_at, "%b"),
     day = format(created_at, "%d")
   )
 
+pb_time$Month <- factor(pb_time$Month, levels = month.abb)
 ############## Groupings #################
 #------------ Monolith Years ---------------
 mono2020 <- monolith_time %>%
