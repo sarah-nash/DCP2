@@ -31,7 +31,8 @@ monolith_time <- df_monolith %>%
     day = format(observed_at, "%d")
   )
 
-monolith_time$Month <- factor(monolith_time$Month, levels = month.abb)
+monolith_time$Month <-
+  factor(monolith_time$Month, levels = month.abb)
 
 monolith_time$page_name[monolith_time$page_name == "Doctors Without Borders/Médecins Sans Frontières (MSF)"] <-
   "Doctors Without Borders/Medecins Sans Frontieres (MSF)"
@@ -122,6 +123,8 @@ mono_age_groups <- mono_age %>%
 
 mono_age_groups <- data.frame(t(mono_age_groups))
 
+mono_age_groups$props <-
+  mono_age_groups$t.mono_age_groups. / length(monolith_time$ad_id)
 #--------------- Propublica Age Groups -------------
 # Age groups
 pb_age_groups <- pb_time %>%
@@ -141,6 +144,9 @@ pb_age_groups <- pb_time %>%
   )
 
 pb_age_groups <- data.frame(t(pb_age_groups))
+
+pb_age_groups$props <-
+  pb_age_groups$t.pb_age_groups. / length(pb_time$id)
 
 #------------- Monolith Pages ----------------
 mono_page_freq <- monolith_time %>%
